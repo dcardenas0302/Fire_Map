@@ -3,19 +3,19 @@ class InputData{
 
     }
 //data types for these should probably be double
-    int getHum(){
+    getHum(){
 
     }
 
-    int getTemp(){
+    getTemp(){
         
     }
 
-    int getSpeed(){
+    getSpeed(){
         
     }
 
-    int getKBDI(){
+    getKBDI(){
         
     }
 
@@ -38,19 +38,19 @@ class InputUI{
     buttons
     boxes
 
-    void printError(){
+    printError(){
 
     }
 
-    void submit(){
+    submit(){
 
     }
 
-    void promptInput(){
+    promptInput(){
 
     }
 
-    void displayInput(){
+    displayInput(){
         
     }
 }
