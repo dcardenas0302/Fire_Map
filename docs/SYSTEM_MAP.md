@@ -23,7 +23,7 @@ The system lets users input temperature, wind speed, humidity, and days since ra
 
 The code evidence in the trace shows a browser-only application. The trace does not show a backend server, API route, database, or external service.
 
-![As-built architecture diagram](system-architecture.svg)
+![As-built architecture diagram](system-architecture-diagram.png)
 
 The architecture diagram shows the components supported by the code evidence:
 
@@ -77,7 +77,7 @@ Every candidate requirement must:
 
 Include at least one requirement of each status. The unconfirmed ones and suspected bugs are the most valuable. They are where your next sprint’s work comes from.
 
-### Part 6: Three unit test cases
+## Part 6: Three unit test cases
 #### A unit test checks one function on its own, with no browser, server, or database involved. Your three test cases are your verification strategy in miniature: each one proves, or disproves, one of your candidate requirements.
 
 Every test case must:
