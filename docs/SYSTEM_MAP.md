@@ -62,3 +62,33 @@ The traced action is entering temperature, wind speed, humidity, and days since 
 2. **Design:** Why are the separate classes in the `src/` folder not connected to the working website?
 3. **Intent/design:** Was the application intentionally designed to calculate wildfire risk entirely inside the browser without a separate database or backend?
 
+## Part 5: Candidate requirements
+### A candidate requirement is your best guess at what the system should do, recovered from what the code does. It is a candidate until someone confirms it. Write at least five.
+Every candidate requirement must:
+
+1. Start with “The system shall…” and describe one behavior only. If you write “and,” split it in two.
+2. Be testable. Write an acceptance criterion: a specific input and the result you expect. “The form should be user friendly” fails this rule.
+3. Cite its source. Name the trace row, file, or function where you found it. If the code does not do it yet, say so.
+4. Have a status. Pick one:
+    - Confirmed: the code does it, and it is clearly intended.
+    - Unconfirmed: you think it should be true, but you need the original team to confirm.
+    - Suspected bug: the code does something that looks wrong.
+5. Have a type. Functional (what it does) or non-functional (security, performance, usability).
+
+Include at least one requirement of each status. The unconfirmed ones and suspected bugs are the most valuable. They are where your next sprint’s work comes from.
+
+### Part 6: Three unit test cases
+#### A unit test checks one function on its own, with no browser, server, or database involved. Your three test cases are your verification strategy in miniature: each one proves, or disproves, one of your candidate requirements.
+
+Every test case must:
+
+1. Trace to a candidate requirement by its ID (CR-1, CR-2, and so on).
+2. Name the unit under test: one file and one function.
+3. Give an exact input and an exact expected output. “It should work” is not an expected output.
+4.Cover three different kinds of test across your set of three:
+    - Positive: valid input is accepted.
+    - Negative: invalid input is rejected.
+    - Boundary: input right at the edge of a limit.
+5. Predict pass or fail against the current code. A test you expect to fail is not a mistake. It documents a gap, and it becomes a backlog item.
+
+You only need to write the test cases, not run them. If your team writes real test code, that is a bonus.
