@@ -119,8 +119,6 @@ You only need to write the test cases, not run them. If your team writes real te
    
 ## Part 6: Unit Test Cases
 
-## Part 6: Unit Test Cases
-
 The unit under test is `calculateRisk()` in `risk.js`. It accepts temperature, humidity, wind speed, and days since rain, and returns a wildfire-risk number.
 
 | ID | Requirement | Kind | Unit under test | Input | Expected output | Predicted result today |
