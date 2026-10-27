@@ -63,7 +63,7 @@ The traced action is entering temperature, wind speed, humidity, and days since 
 3. **Intent/design:** Was the application intentionally designed to calculate wildfire risk entirely inside the browser without a separate database or backend?
 
 
-PART 4: Reality Check - Ryder Garcia 
+Reality Check - Ryder Garcia 
 What the System Actually Does 
 Fire_Map is a wildfire risk calcualtor that allows usre to enter specific weather conditions and recieve a wildfire risk percentage for exactly where they are. 
 This application uses a JavaScript fucntion called calculateRisk() in risk.js to calculate the result. 
@@ -117,7 +117,7 @@ Every test case must:
 
 You only need to write the test cases, not run them. If your team writes real test code, that is a bonus.
    
-## Part 6: Unit Test Cases
+## Unit Test Cases
 
 The unit under test is `calculateRisk()` in `risk.js`. It accepts temperature, humidity, wind speed, and days since rain, and returns a wildfire-risk number.
 
