@@ -1,4 +1,4 @@
-<img width="2266" height="880" alt="image" src="https://github.com/user-attachments/assets/c3f95d32-8690-483c-986d-b0673f677e3f" /># Trace the Click: System Map
+# Trace the Click: System Map
 
 **Date:** October 22, 2026  
 **Team:** Group 8  
@@ -118,6 +118,8 @@ Every test case must:
 You only need to write the test cases, not run them. If your team writes real test code, that is a bonus.
    
 ## Part 6: Unit Test Cases
+
+The units under test are `calculateRisk()` in `risk.js`, which returns a wildfire-risk number, and the submit-button event listener in `userinput.js`, which reads the weather inputs and displays the result.
 
 | ID | Requirement | Kind | Unit under test | Input | Expected output | Predicted result today |
 |---|---|---|---|---|---|---|
