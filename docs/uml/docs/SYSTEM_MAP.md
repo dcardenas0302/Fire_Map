@@ -119,11 +119,14 @@ You only need to write the test cases, not run them. If your team writes real te
    
 ## Part 6: Unit Test Cases
 
-The units under test are `calculateRisk()` in `risk.js`, which returns a wildfire-risk number, and the submit-button event listener in `userinput.js`, which reads the weather inputs and displays the result.
+## Part 6: Unit Test Cases
+
+The unit under test is `calculateRisk()` in `risk.js`. It accepts temperature, humidity, wind speed, and days since rain, and returns a wildfire-risk number.
 
 | ID | Requirement | Kind | Unit under test | Input | Expected output | Predicted result today |
 |---|---|---|---|---|---|---|
-| TC-1 | CR-1 | Positive | `risk.js` - `calculateRisk()` | `calculateRisk(30, 50, 10, 5)` | `45` | Pass: the current formula returns `45`. |
-| TC-2 | CR-4 | Negative | `userinput.js` - submit button event listener | Humidity field is empty; user clicks Submit | An error message is displayed, and the page does not display `Wildfire Risk: NaN%`. | Fail: `parseFloat()` produces `NaN`, and the current code displays an invalid result. |
-| TC-3 | CR-3 | Boundary | `risk.js` - `calculateRisk()` | `calculateRisk(30, 100, -10, 0)` | `0` | Fail: the current formula returns `-15`, which is below the allowed minimum. |
+| TC-1 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | `calculateRisk(30, 20, 10, 5)` | The result is between `0` and `100` | Pass: returns `57` |
+| TC-2 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | Compare `calculateRisk(30, 20, 10, 5)` with `calculateRisk(30, 80, 10, 5)` | The two results should be different | Pass: returns `57` and `33` |
+| TC-3 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | Compare `calculateRisk(30, 20, 5, 5)` with `calculateRisk(30, 20, 20, 5)` | The two results should be different | Pass: returns `50` and `72` |
+| TC-4 | RQ-03 | Boundary/behavior gap | `risk.js` - `calculateRisk()` | Compare `calculateRisk(10, 20, 10, 5)` with `calculateRisk(40, 20, 10, 5)` | The two results should be different | Fail: both currently return `57` because temperature is ignored |
 
