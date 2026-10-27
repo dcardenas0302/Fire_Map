@@ -91,19 +91,15 @@ Our exisying Fire_Map applicated can accept weatehr inputs and then calculate a 
 Our fidning show that the system's current implementation does not completely match its expected behavior. 
 
 ## Part 5: Candidate requirements
-### A candidate requirement is your best guess at what the system should do, recovered from what the code does. It is a candidate until someone confirms it. Write at least five.
-Every candidate requirement must:
+| ID | Candidate Requirement | Type | Source / Code Evidence | Status | Acceptance Criterion |
+|---|---|---|---|---|---|
+| CR-1 | The system shall calculate a wildfire risk percentage using humidity, wind speed, and days since rain. | Functional | risk.js -> calculateRisk(); Part 3 Step 4 Currently implemented | Confirmed | Calling calculateRisk(30, 50, 10, 5) returns 45 | 
+| CR-2 | The system shall limit calculated wildfire risk percentages to a maximum of 100% | Functional | risk.js -> Math.min(100, ...); Part 3 Step 4/ Currently implemeneted | Confirmed | Calling calculateRisk(30, 0, 50, 30) returns 100. |
+| CR-3 | The system shall prevent calculated wildfire risk percentages from falling below 0% | Functional | risk.js -> calculateRisk() does mot enforce a minimum value; GitHub issue #71. Not implemented | Suspected bug | Calling calculateRisk(30, 100, -10, 0) returns 0 rather than -15 |
+| CR-4 | The system shall rejetc submissions containing empty weather input fields | Functional | unserinput.js -> Submit button event listner uses parseFloat() without checking for missing values. GitHub Issue #70 Not Implemented | Suspected Bug | LEaving the humidity field empty and clicking submit displays a error sinetad of "Wildfire Risk: NaN%." |
+| CR-5 | The system shall incorporate temperature into the wildire risk calculation. | Functional | risk.js -> calculateRisk() accepts twmp but doesnt use it; Part 3 Step 4; GitHub Issue #72 Not Implemented. | Unconfirmed | With humindity 50, wind speed 10, and days since rain 5, changing the temp from 5 to 35 degree celcius produces different risk percentages, if temp is confirmed as part of the intended risk model. |
 
-1. Start with “The system shall…” and describe one behavior only. If you write “and,” split it in two.
-2. Be testable. Write an acceptance criterion: a specific input and the result you expect. “The form should be user friendly” fails this rule.
-3. Cite its source. Name the trace row, file, or function where you found it. If the code does not do it yet, say so.
-4. Have a status. Pick one:
-    - Confirmed: the code does it, and it is clearly intended.
-    - Unconfirmed: you think it should be true, but you need the original team to confirm.
-    - Suspected bug: the code does something that looks wrong.
-5. Have a type. Functional (what it does) or non-functional (security, performance, usability).
 
-Include at least one requirement of each status. The unconfirmed ones and suspected bugs are the most valuable. They are where your next sprint’s work comes from.
 
 ## Part 6: Three unit test cases
 #### A unit test checks one function on its own, with no browser, server, or database involved. Your three test cases are your verification strategy in miniature: each one proves, or disproves, one of your candidate requirements.
