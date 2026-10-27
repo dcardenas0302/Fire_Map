@@ -1,4 +1,4 @@
-# Trace the Click: System Map
+<img width="2266" height="880" alt="image" src="https://github.com/user-attachments/assets/c3f95d32-8690-483c-986d-b0673f677e3f" /># Trace the Click: System Map
 
 **Date:** October 22, 2026  
 **Team:** Group 8  
@@ -117,6 +117,11 @@ Every test case must:
 
 You only need to write the test cases, not run them. If your team writes real test code, that is a bonus.
    
+## Part 6: Unit Test Cases
 
-
+| ID | Requirement | Kind | Unit under test | Input | Expected output | Predicted result today |
+|---|---|---|---|---|---|---|
+| TC-1 | CR-1 | Positive | `risk.js` - `calculateRisk()` | `calculateRisk(30, 50, 10, 5)` | `45` | Pass: the current formula returns `45`. |
+| TC-2 | CR-4 | Negative | `userinput.js` - submit button event listener | Humidity field is empty; user clicks Submit | An error message is displayed, and the page does not display `Wildfire Risk: NaN%`. | Fail: `parseFloat()` produces `NaN`, and the current code displays an invalid result. |
+| TC-3 | CR-3 | Boundary | `risk.js` - `calculateRisk()` | `calculateRisk(30, 100, -10, 0)` | `0` | Fail: the current formula returns `-15`, which is below the allowed minimum. |
 
