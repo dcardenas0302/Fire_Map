@@ -78,27 +78,30 @@ RULES
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Buttons and Results (Noam Garibi)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| | | |
+| G-NG-01 | A San Diego resident checking the fire risk where they live | The resident needs to click one button and clearly see the wildfire risk percentage for the numbers they typed. They need to be able to check again with new numbers. |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| REQ-NG-01 | When the user enters numbers in all four fields and clicks the Submit button the system shall show the text "Wildfire Risk: N%". N is the value calculateRisk() returns for those inputs. | Confirmed | Not in Part 5. Comes from RQ-04 in our V&V doc: System shall display the calculated wildfire risk percentage to the user. |
+| REQ-NG-02 | The system shall show the result in the output area below the Submit button. When the user clicks Submit again the new result shall replace the old one so only one "Wildfire Risk" line is on the page. | Confirmed | New. Based on TC-03 in our V&V doc which says the percentage appears in the designated output area. |
+| REQ-NG-03 | The system shall show a Reset button. Clicking it shall empty all four input fields and the output area. | Suspected bug | Comes from RQ-05 in our V&V doc: The system shall allow users to reset input fields. |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
+| NFR-NG-01 | The result shall appear in under 1 second after the user clicks Submit. | Confirmed | New |
+| NFR-NG-02 | The output area shall show text only. Elements shouldn't be added to the page and the result format stays consistent no matter the input | Confirmed | New |
+
+No Part 5 requirement belongs to this area. CR-1 CR-2 CR-3 and CR-5 are about the calculation and CR-4 is about input checking. My requirements come from RQ-04 and RQ-05 in our V&V doc.
 
 ---
 
