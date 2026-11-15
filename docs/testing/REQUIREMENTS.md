@@ -90,9 +90,9 @@ RULES
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-NG-01 | When the user enters numbers in all four fields and clicks the Submit button the system shall show the text "Wildfire Risk: N%". N is the value calculateRisk() returns for those inputs. | Confirmed | Not in Part 5. Comes from RQ-04 in our V&V doc: System shall display the calculated wildfire risk percentage to the user. |
+| REQ-NG-01 | When the user enters numbers in all four fields and clicks the Submit button the system shall show the text "Wildfire Risk: N%". N is the value calculateRisk() returns for those inputs. | Confirmed | New. Comes from RQ-04 in our V&V doc: System shall display the calculated wildfire risk percentage to the user. |
 | REQ-NG-02 | The system shall show the result in the output area below the Submit button. When the user clicks Submit again the new result shall replace the old one so only one "Wildfire Risk" line is on the page. | Confirmed | New. Based on TC-03 in our V&V doc which says the percentage appears in the designated output area. |
-| REQ-NG-03 | The system shall show a Reset button. Clicking it shall empty all four input fields and the output area. | Suspected bug | Comes from RQ-05 in our V&V doc: The system shall allow users to reset input fields. |
+| REQ-NG-03 | The system shall show a Reset button. Clicking it shall empty all four input fields and the output area. | Suspected bug | New. Comes from RQ-05 in our V&V doc: The system shall allow users to reset input fields. |
 
 ### Non-Functional Requirements
 
