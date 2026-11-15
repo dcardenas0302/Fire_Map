@@ -23,27 +23,27 @@ RULES
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: [Input Checking] ([Ryder Garcia])
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| G-XX-01 | | |
+| G-RG-01 | Fire_Map Users | Users need to enter valid weather conditions and receive wildfire risk results without missing or invalid inputs being accepted.|
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-XX-01 | | | |
-| REQ-XX-02 | | | |
-| REQ-XX-03 | | | |
+| REQ-RG-01 |The System shall accept a submission containing numeric values for temperature, humidity, wind speed and days since rain.| Confirmed | New |
+| REQ-RG-02 |The system shall reject a submission when ay of the four weather input field is empty. | Suspected Bug| CR -4: The System shall reject submissions containing empty weatehr input fields |
+| REQ-RG-03 |The system shall reject a submission when wind speed is less than 0 m/s | Suspected Bug| New |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| NFR-XX-01 | | | |
+| NFR-RG-01 | The system shall display a visible error message identifying the invalid field after an invalid submission |Suspected Bug | New |
 
 ### Example of a Good Rewrite
 
