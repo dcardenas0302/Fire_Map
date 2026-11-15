@@ -90,7 +90,7 @@ Expected Result: The submission is rejected because humidity exceeds 100%
 Status: Fail
 Sevreity: Major 
 V or V: Verification 
-GitHub Issue: 
+GitHub Issue:#84 
 
 **TEST ID** RG -04 NEgative Wind Speed is Rejected 
 Test ID: RG -04 
@@ -124,7 +124,7 @@ Actual Result: The system accepts the negative wind speed and displays "Wildfire
 Status: Fail 
 Severity: Major
 V or V: Validation 
-GitHub issue: 
+GitHub issue: #85
 
 
 
