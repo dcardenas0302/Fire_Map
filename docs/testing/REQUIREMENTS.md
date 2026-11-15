@@ -1,7 +1,7 @@
-# Testable Requirements: [Project Name]
+# Testable Requirements: [Fire Map]
 
-**Team number:** [XX]
-**Inherited from:** Team [XX]
+**Team number:** [8]
+**Inherited from:** Team [7]
 
 ## Who Owns What
 
