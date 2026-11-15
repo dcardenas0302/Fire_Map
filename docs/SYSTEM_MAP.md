@@ -62,20 +62,44 @@ The traced action is entering temperature, wind speed, humidity, and days since 
 2. **Design:** Why are the separate classes in the `src/` folder not connected to the working website?
 3. **Intent/design:** Was the application intentionally designed to calculate wildfire risk entirely inside the browser without a separate database or backend?
 
+
+Reality Check - Ryder Garcia 
+What the System Actually Does 
+Fire_Map is a wildfire risk calcualtor that allows usre to enter specific weather conditions and recieve a wildfire risk percentage for exactly where they are. 
+This application uses a JavaScript fucntion called calculateRisk() in risk.js to calculate the result. 
+After running, testing and examining my code, we indentified several differences between the system;'s expected behavior and the actual implementation. 
+
+Findings: 
+1. Temperature does NOT affect the Risk Calculation
+   Expected Behavior: Changing the temperarture should affect the wildfire risk percentage if it is intedned to be a part of the risk model.
+   Actual Behavior: The calculateRisk() function accepts temperature as a paramter but doesnt include it in the calculation.
+   Code Evidence: risk.js->calculateRisk(temp, wind, daysSinceRain, humidity)
+   GitHub issue: Issue #72
+2. Empty Inputs Producen Invalid Results
+   Expected Behavior: Our application should reject missing weather inputs but instead it displays an invlaid risk percentage
+   Actual Behavior: During our manual testing, when leaving an input field empty and clicking submit, the application displayed the error code: NaN%
+   Evidence: manual Testing
+   GitHub Issue: Issue #70
+3. Risk Percentages Can Become Negative
+   Expected Behavior: The wildifire risk percentage should remain between 0-100%
+   Actual Behavior: The calculation uses Math.min(100, ...) which enforces a maximum of 100% but it does NOT enfore the minimum of 0%.
+   Code evidence: risk.js -> calcualteRisk()
+   Github Issue: Issue #71
+
+Reality Check Summary 
+Our exisying Fire_Map applicated can accept weatehr inputs and then calculate a wildfire risk percentage. But, through our examniation of testing and the code, we discovered gaps in input validation and the risk calculation. Temperarture is not included in the formula and empty field can produce invalid results. 
+Our fidning show that the system's current implementation does not completely match its expected behavior. 
+
 ## Part 5: Candidate requirements
-### A candidate requirement is your best guess at what the system should do, recovered from what the code does. It is a candidate until someone confirms it. Write at least five.
-Every candidate requirement must:
+| ID | Candidate Requirement | Type | Source / Code Evidence | Status | Acceptance Criterion |
+|---|---|---|---|---|---|
+| CR-1 | The system shall calculate a wildfire risk percentage using humidity, wind speed, and days since rain. | Functional | risk.js -> calculateRisk(); Part 3 Step 4 Currently implemented | Confirmed | Calling calculateRisk(30, 50, 10, 5) returns 45 | 
+| CR-2 | The system shall limit calculated wildfire risk percentages to a maximum of 100% | Functional | risk.js -> Math.min(100, ...); Part 3 Step 4/ Currently implemeneted | Confirmed | Calling calculateRisk(30, 0, 50, 30) returns 100. |
+| CR-3 | The system shall prevent calculated wildfire risk percentages from falling below 0% | Functional | risk.js -> calculateRisk() does mot enforce a minimum value; GitHub issue #71. Not implemented | Suspected bug | Calling calculateRisk(30, 100, -10, 0) returns 0 rather than -15 |
+| CR-4 | The system shall rejetc submissions containing empty weather input fields | Functional | unserinput.js -> Submit button event listner uses parseFloat() without checking for missing values. GitHub Issue #70 Not Implemented | Suspected Bug | LEaving the humidity field empty and clicking submit displays a error sinetad of "Wildfire Risk: NaN%." |
+| CR-5 | The system shall incorporate temperature into the wildire risk calculation. | Functional | risk.js -> calculateRisk() accepts twmp but doesnt use it; Part 3 Step 4; GitHub Issue #72 Not Implemented. | Unconfirmed | With humindity 50, wind speed 10, and days since rain 5, changing the temp from 5 to 35 degree celcius produces different risk percentages, if temp is confirmed as part of the intended risk model. |
 
-1. Start with “The system shall…” and describe one behavior only. If you write “and,” split it in two.
-2. Be testable. Write an acceptance criterion: a specific input and the result you expect. “The form should be user friendly” fails this rule.
-3. Cite its source. Name the trace row, file, or function where you found it. If the code does not do it yet, say so.
-4. Have a status. Pick one:
-    - Confirmed: the code does it, and it is clearly intended.
-    - Unconfirmed: you think it should be true, but you need the original team to confirm.
-    - Suspected bug: the code does something that looks wrong.
-5. Have a type. Functional (what it does) or non-functional (security, performance, usability).
 
-Include at least one requirement of each status. The unconfirmed ones and suspected bugs are the most valuable. They are where your next sprint’s work comes from.
 
 ## Part 6: Three unit test cases
 #### A unit test checks one function on its own, with no browser, server, or database involved. Your three test cases are your verification strategy in miniature: each one proves, or disproves, one of your candidate requirements.
@@ -92,3 +116,15 @@ Every test case must:
 5. Predict pass or fail against the current code. A test you expect to fail is not a mistake. It documents a gap, and it becomes a backlog item.
 
 You only need to write the test cases, not run them. If your team writes real test code, that is a bonus.
+   
+## Unit Test Cases
+
+The unit under test is `calculateRisk()` in `risk.js`. It accepts temperature, humidity, wind speed, and days since rain, and returns a wildfire-risk number.
+
+| ID | Requirement | Kind | Unit under test | Input | Expected output | Predicted result today |
+|---|---|---|---|---|---|---|
+| TC-1 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | `calculateRisk(30, 20, 10, 5)` | The result is between `0` and `100` | Pass: returns `57` |
+| TC-2 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | Compare `calculateRisk(30, 20, 10, 5)` with `calculateRisk(30, 80, 10, 5)` | The two results should be different | Pass: returns `57` and `33` |
+| TC-3 | RQ-03 | Positive | `risk.js` - `calculateRisk()` | Compare `calculateRisk(30, 20, 5, 5)` with `calculateRisk(30, 20, 20, 5)` | The two results should be different | Pass: returns `50` and `72` |
+| TC-4 | RQ-03 | Boundary/behavior gap | `risk.js` - `calculateRisk()` | Compare `calculateRisk(10, 20, 10, 5)` with `calculateRisk(40, 20, 10, 5)` | The two results should be different | Fail: both currently return `57` because temperature is ignored |
+
