@@ -10,7 +10,7 @@
 | Risk Calculation | Jacobo Ramos | JR |
 | Buttons and Results | Noam Garibi | NG |
 | Input Checking | Ryder Garcia | RG |
-| | | |
+| Instructions and Usability | Liliana Carrillo | LC |
 
 <!--
 RULES
@@ -101,24 +101,24 @@ No Part 5 requirement belongs to this area. CR-1 CR-2 CR-3 and CR-5 are about th
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Instructions and Usability (Liliana Carrillo)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| | | |
+| G-LC-01 | Fire-Map Users | Users need clear instructions on how to get a wildfire risk percentage for their area, and the website should be intuitive and user-friendly. |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| REQ-LC-01 | The website states in text what its purpose is, and what specific inputs it requires from the user. | confirmed | New |
+| REQ-LC-02 | The website should provide a labeled area field for temperature, humidity, wind speed, and days since rain. | confirmed | New |
+| REQ-LC-03 | The website should display an understandable error message when a user leaves a required input blank or enters an invalid value for it.| Suspected Bug | New |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| | | | |
+| NFR-LC-01 | The website should be able to calculate the wildfire risk percentage and display it to the user in under 2 minutes. | Confirmed | New |
