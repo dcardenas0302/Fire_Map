@@ -38,6 +38,7 @@ RULES
 | REQ-RG-01 |The System shall accept a submission containing numeric values for temperature, humidity, wind speed and days since rain.| Confirmed | New |
 | REQ-RG-02 |The system shall reject a submission when ay of the four weather input field is empty. | Suspected Bug| CR -4: The System shall reject submissions containing empty weatehr input fields |
 | REQ-RG-03 |The system shall reject a submission when wind speed is less than 0 m/s | Suspected Bug| New |
+| REQ-RG-04 | The system shall reject a submission when humidity is below 0% and above 100%. | Suspected Bug | New |
 
 ### Non-Functional Requirements
 
