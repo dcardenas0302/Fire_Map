@@ -1,14 +1,14 @@
-# Testable Requirements: [Project Name]
+# Testable Requirements: [Fire Map]
 
-**Team number:** [XX]
-**Inherited from:** Team [XX]
+**Team number:** [8]
+**Inherited from:** Team [7]
 
 ## Who Owns What
 
 | Area of the system | Owner | ID prefix |
 |---|---|---|
 | [example: Accounts and login] | [name] | [initials, like MG] |
-| | | |
+| Risk Calculation | Jacobo Ramos | JR |
 | | | |
 | | | |
 
@@ -23,34 +23,27 @@ RULES
 
 ---
 
-## Section: [Your Area] ([Your Name])
+## Section: Risk Calculation - (Jacobo Ramos)
 
 ### Stakeholder Goals
 
 | ID | Stakeholder | Goal |
 |---|---|---|
-| G-XX-01 | | |
+| G-JR-01 | Users of Fire Map | Users need a consistent Fire Risk estimate that responds to the weather conditions the application claims to consider |
 
 ### Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| REQ-XX-01 | | | |
-| REQ-XX-02 | | | |
-| REQ-XX-03 | | | |
+| REQ-JR-01 |The system shall calculate a numeric wildfire risk percentage based on humidity, wind speed, and days since Rain. For temperature 30°C, humidity 50%, wind speed 10 m/s, and 5 days since rain, the calculated result shall be 45%. | Confirmed |  CR-1: The system shall calculate a wildfire risk percentage using humidity, wind speed, and days since rain. |
+| REQ-JR-02 | The system shall limit calculated wildfire risk percentages to a maximum of 100% | Confirmed | CR-2: The system shall limit calculated wildfire risk percentages to a maximum of 100% |
+| REQ-JR-03 | The system shall incorporate temperature into the wildfire risk calculation. |  Suspected bug ([#72](https://github.com/dcardenas0302/Fire_Map/issues/72)) | CR-5: The system shall incorporate temperature into the wildfire risk calculation |
 
 ### Non-Functional Requirements
 
 | ID | Requirement | Status | From Part 5 |
 |---|---|---|---|
-| NFR-XX-01 | | | |
-
-### Example of a Good Rewrite
-
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| REQ-MG-01 | The system shall reject a profile bio longer than 280 characters with the error "Bio must be 280 characters or fewer." | Suspected bug | CR-3 (Unconfirmed): The system shall limit the bio to 280 characters. |
-| NFR-MG-01 | The profile page loads in under 2 seconds with 100 profiles in the database. | Confirmed | New |
+| NFR-JR-01 | Given the same input, calculateRisk() shall return the same numeric value as a result across 100 consecutive calls. | Confirmed | New |
 
 ---
 
