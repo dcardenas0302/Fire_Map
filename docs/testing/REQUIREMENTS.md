@@ -7,9 +7,9 @@
 
 | Area of the system | Owner | ID prefix |
 |---|---|---|
-| [example: Accounts and login] | [name] | [initials, like MG] |
 | Risk Calculation | Jacobo Ramos | JR |
-| | | |
+| Buttons and Results | Noam Garibi | NG |
+| Input Checking | Ryder Garcia | RG |
 | | | |
 
 <!--
@@ -45,29 +45,6 @@ RULES
 |---|---|---|---|
 | NFR-JR-01 | Given the same input, calculateRisk() shall return the same numeric value as a result across 100 consecutive calls. | Confirmed | New |
 
----
-
-## Section: [Your Area] ([Your Name])
-
-### Stakeholder Goals
-
-| ID | Stakeholder | Goal |
-|---|---|---|
-| | | |
-
-### Functional Requirements
-
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-
-### Non-Functional Requirements
-
-| ID | Requirement | Status | From Part 5 |
-|---|---|---|---|
-| | | | |
 
 ---
 
@@ -95,6 +72,32 @@ RULES
 | NFR-NG-02 | The output area shall show text only. Elements shouldn't be added to the page and the result format stays consistent no matter the input | Confirmed | New |
 
 No Part 5 requirement belongs to this area. CR-1 CR-2 CR-3 and CR-5 are about the calculation and CR-4 is about input checking. My requirements come from RQ-04 and RQ-05 in our V&V doc.
+
+
+---
+
+## Section: Input Checking (Ryder Garcia)
+
+### Stakeholder Goals
+
+| ID | Stakeholder | Goal |
+|---|---|---|
+| G-RG-01 | Fire_Map Users | Users need to enter valid weather conditions and receive wildfire risk results without missing or invalid inputs being accepted.|
+
+### Functional Requirements
+
+| ID | Requirement | Status | From Part 5 |
+|---|---|---|---|
+| REQ-RG-01 |The System shall accept a submission containing numeric values for temperature, humidity, wind speed and days since rain.| Confirmed | New |
+| REQ-RG-02 |The system shall reject a submission when ay of the four weather input field is empty. | Suspected Bug| CR -4: The System shall reject submissions containing empty weatehr input fields |
+| REQ-RG-03 |The system shall reject a submission when wind speed is less than 0 m/s | Suspected Bug| New |
+| REQ-RG-04 | The system shall reject a submission when humidity is below 0% and above 100%. | Suspected Bug | New |
+
+### Non-Functional Requirements
+
+| ID | Requirement | Status | From Part 5 |
+|---|---|---|---|
+| NFR-RG-01 | The system shall display a visible error message identifying the invalid field after an invalid submission |Suspected Bug | New |
 
 ---
 
