@@ -9,11 +9,11 @@ Fill this in **after** everyone's work is merged. One row per requirement.
 
 | Requirement ID | From Part 5 | Owner | Test case IDs | Result | GitHub Issue # |
 |---|---|---|---|---|---|
-| REQ-MG-01 *(example)* | CR-3 | Maria | MG-01, MG-02 | 1 Pass, 1 Fail | #12 |
-| | | | | | |
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| REQ-RG-01 | New | Ryder Garcia | RG-01| 1 Pass |  |
+| REQ-RG-02 | CR-4 | Ryder Garcia| RG-02 | 1 Fail | #70 |
+| REQ-RG-03 | New | Ryder Garcia | RG-04 | 1 Fail | #85 |
+| REQ-RG-04 | New | Ryder Garcia | RG-03 | 1 Fail | #84 |
+|  |  |  |  |  | |
 | | | | | | |
 | | | | | | |
 | | | | | | |
@@ -40,10 +40,10 @@ Put a Test ID next to each type. Team minimum: all 7.
 |---|---|
 | Unit | |
 | Integration | |
-| System (E2E) | |
-| Acceptance | |
-| Boundary Value | |
-| Negative | |
+| System (E2E) | RG-01 |
+| Acceptance | RG-04 |
+| Boundary Value | RG-03 |
+| Negative | RG-02 |
 | Security | |
 
 ## Validation Findings
