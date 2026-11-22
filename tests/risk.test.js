@@ -4,6 +4,8 @@ const calculateRisk = require("../risk.js");
 const validRisk = (risk) =>
   Number.isFinite(risk) && risk >= 0 && risk <= 100;
 
+//const isValidHumidity = calculateRisk.isValidHumidity;
+
 describe("RQ-03: Wildfire Risk Calculation", () => {
   // TC-01
   test("normal inputs return a valid risk", () => {
@@ -63,4 +65,12 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     const risk = calculateRisk(28.5, 45.5, 7.2, 3.5);
     expect(validRisk(risk)).toBe(true);
   });
+
+
+test("RG-03: humidity above 100% is rejected", () => {
+  expect(() => {
+    calculateRisk(30, 101, 10, 5);
+  }).toThrow(RangeError);
+});
+
 });
