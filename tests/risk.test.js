@@ -80,4 +80,11 @@ test("RG-04: negative wind speed is rejected", () => {
   }).toThrow(RangeError);
 });
 
+// RG-05 — Reject negative days since rain
+test("RG-05: negative days since rain is rejected", () => {
+  expect(() => {
+    calculateRisk(30, 50, 10, -5);
+  }).toThrow(RangeError);
+});
+
 });
