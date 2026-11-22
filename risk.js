@@ -3,10 +3,15 @@ function calculateRisk(temp, humidity, wind, daysSinceRain) {
   if (!Number.isFinite(humidity) || humidity < 0 || humidity > 100) {
   throw new RangeError("Humidity must be between 0 and 100%");
   }
+
+  if (!Number.isFinite(wind) || wind < 0) {
+    throw new RangeError("Wind speed must be 0 or greater");
+  }
+  
   
   // Clamp inputs to safe physical bounds
   const h = Math.max(0, Math.min(100, humidity));
-  const u = Math.max(0, wind);
+  const u = wind;
   const d = Math.max(0, daysSinceRain);
 
   // Equilibrium Moisture Content (m)

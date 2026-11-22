@@ -73,4 +73,11 @@ test("RG-03: humidity above 100% is rejected", () => {
   }).toThrow(RangeError);
 });
 
+// RG-04 — Reject negative wind speed
+test("RG-04: negative wind speed is rejected", () => {
+  expect(() => {
+    calculateRisk(30, 50, -10, 5);
+  }).toThrow(RangeError);
+});
+
 });
