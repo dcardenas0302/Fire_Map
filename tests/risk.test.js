@@ -75,7 +75,7 @@ test("RG-03: humidity above 100% is rejected", () => {
 
 
 test("RG-05: negative days since rain is rejected", () => {
-  expected(() => {
+  expect(() => {
     calculateRisk(30, 50, 10, -5);
   }).toThrow(RangeError);
 });
