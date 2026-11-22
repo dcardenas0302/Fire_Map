@@ -26,6 +26,11 @@ const button = document.createElement("button");
 button.textContent = "Submit";
 document.body.appendChild(button);
 
+const resetButton = document.createElement("button");
+resetButton.textContent = "Reset";
+document.body.appendChild(resetButton);
+
+
 const output = document.createElement("p");
 output.id = "output";
 document.body.appendChild(output);
@@ -72,4 +77,12 @@ button.addEventListener("click", () => {
     output.textContent = "Error: " + error.message;
     output.style.color = "red";
   }
+});
+
+resetButton.addEventListener("click", () =>{
+  input1.value = "";
+  input2.value = "";
+  input3.value = "";
+  input4.value = "";
+  output.textContent = "";
 });
