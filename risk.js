@@ -33,6 +33,12 @@ function calculateRisk(temp, humidity, wind, daysSinceRain) {
   return Math.round(riskPercentage * 10) / 10; // Rounded to 1 decimal place
 }
 
+function isValidHumidity(humidity){
+  return Number.isFinite(humidity) && humidity >= 0 && humidity <= 100;
+}
+
 if (typeof module !== "undefined") {
   module.exports = calculateRisk;
+  module.exports.isValidHumidity = isValidHumidity;
 }
+
