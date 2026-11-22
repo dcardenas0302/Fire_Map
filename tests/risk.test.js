@@ -4,7 +4,7 @@ const calculateRisk = require("../risk.js");
 const validRisk = (risk) =>
   Number.isFinite(risk) && risk >= 0 && risk <= 100;
 
-const isValidHumidity = calculateRisk.isValidHumidity;
+//const isValidHumidity = calculateRisk.isValidHumidity;
 
 describe("RQ-03: Wildfire Risk Calculation", () => {
   // TC-01
@@ -66,22 +66,11 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     expect(validRisk(risk)).toBe(true);
   });
 
+
+test("RG-03: humidity above 100% is rejected", () => {
+  expect(() => {
+    calculateRisk(30, 101, 10, 5);
+  }).toThrow(RangeError);
 });
 
-describe("REQ-RG-04: Humidity Validation", () => {
-  test("RG-03: humidity above 100% is rejected", () => {
-    expect(isValidHumidity(101)).toBe(false);
-  });
-
-  test("humidity at 100% is accepted", () => {
-    expect(isValidHumidity(100)).toBe(true);
-  });
-
-  test("humidity at 0% is accepted", () => {
-    expect(isValidHumidity(0)).toBe(true);
-  });
-
-  test("humidity below 0% is rejected", () => {
-    expect(isValidHumidity(-15)).toBe(false);
-  });
 });

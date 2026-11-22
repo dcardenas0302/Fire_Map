@@ -1,4 +1,9 @@
 function calculateRisk(temp, humidity, wind, daysSinceRain) {
+
+  if (!Number.isFinite(humidity) || humidity < 0 || humidity > 100) {
+  throw new RangeError("Humidity must be between 0 and 100%");
+  }
+  
   // Clamp inputs to safe physical bounds
   const h = Math.max(0, Math.min(100, humidity));
   const u = Math.max(0, wind);
@@ -33,12 +38,7 @@ function calculateRisk(temp, humidity, wind, daysSinceRain) {
   return Math.round(riskPercentage * 10) / 10; // Rounded to 1 decimal place
 }
 
-function isValidHumidity(humidity){
-  return Number.isFinite(humidity) && humidity >= 0 && humidity <= 100;
-}
-
 if (typeof module !== "undefined") {
   module.exports = calculateRisk;
-  module.exports.isValidHumidity = isValidHumidity;
 }
 

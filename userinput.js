@@ -1,4 +1,3 @@
-const { isValidHumidity } = require("./risk");
 
 const container = document.createElement("div");
 document.body.appendChild(container);
@@ -38,10 +37,10 @@ button.addEventListener("click", () => {
   const humidity = parseFloat(input3.value);
   const daysSinceRain = parseFloat(input4.value);
 
-  if(!isValidHumidity(humidity)){
-    output.textContent = "Humidity must be between 0 and 100%";
-    return;
-  }
+  try {
   const risk = calculateRisk(temp, humidity, windSpeed, daysSinceRain);
   output.textContent = "Wildfire Risk: " + risk + "%";
+  } catch (error) {
+    output.textContent = "Error: " + error.message;
+  }
 });

@@ -13,13 +13,14 @@ This bug was discovered while manually reading the code and noticing that temp w
 
 ### Humidity Values above 100% are accepted
 Issue: https://github.com/dcardenas0302/Fire_Map/issues/84
-PR:
+PR: none yet
 
 #### Issue #84 - Before Fix
-![description](image)
+![Issue 84 - Before Fix](jacobo_ramos_issue84_before.png)
 #### Issue #84 - After Fix
-![description](image)
+![Issue-84 - After Fix](screenshots/jacobo_ramos_issue84_after.png)
 
+Bug noticed while testing. This was one of the fields were we felt it is important to determine what values are the minimum and maximum. Percentages higher or lower than that could mess up the calculation.
 
 
 AI Dislosure Note:
