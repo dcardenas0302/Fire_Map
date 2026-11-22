@@ -37,10 +37,39 @@ button.addEventListener("click", () => {
   const humidity = parseFloat(input3.value);
   const daysSinceRain = parseFloat(input4.value);
 
+
+// Check whether any field was left blank
+  const missingFields = [];
+
+  if (input1.value.trim() === "") {
+    missingFields.push("Temperature");
+  }
+
+  if (input2.value.trim() === "") {
+    missingFields.push("Wind Speed");
+  }
+
+  if (input3.value.trim() === "") {
+    missingFields.push("Humidity");
+  }
+
+  if (input4.value.trim() === "") {
+    missingFields.push("Days Since Rain");
+  }
+
+  if (missingFields.length > 0) {
+    output.textContent =
+      "Error: Missing input(s): " + missingFields.join(", ");
+    output.style.color = "red";
+    return;
+  }
+  
   try {
   const risk = calculateRisk(temp, humidity, windSpeed, daysSinceRain);
+  output.style.color = "black";
   output.textContent = "Wildfire Risk: " + risk + "%";
   } catch (error) {
     output.textContent = "Error: " + error.message;
+    output.style.color = "red";
   }
 });
