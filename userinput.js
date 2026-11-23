@@ -15,16 +15,26 @@ function makeLabeledInput(labelText, placeholder) {
 }
 
 const input1 = makeLabeledInput("Temperature (C): ");
+input1.placeholder = "";
 const input2 = makeLabeledInput("Wind Speed (m/s): ");
+input2.placeholder = "";
 const input3 = makeLabeledInput("Humidity (%): ");
 input3.type = "number";
 input3.min = 0;
 input3. max = 100;
+input3.style.width = "50px";
+input3.placeholder = "";
 const input4 = makeLabeledInput("Days Since Rain: ");
+input4.placeholder = "";
 
 const button = document.createElement("button");
 button.textContent = "Submit";
 document.body.appendChild(button);
+
+const resetButton = document.createElement("button");
+resetButton.textContent = "Reset";
+document.body.appendChild(resetButton);
+
 
 const output = document.createElement("p");
 output.id = "output";
@@ -42,24 +52,24 @@ button.addEventListener("click", () => {
   const missingFields = [];
 
   if (input1.value.trim() === "") {
-    missingFields.push("Temperature");
+    missingFields.push("Invalid Temperature");
   }
 
   if (input2.value.trim() === "") {
-    missingFields.push("Wind Speed");
+    missingFields.push("Invalid Wind Speed");
   }
 
-  if (input3.value.trim() === "") {
-    missingFields.push("Humidity");
+  if (input3.value.trim() === "" || input3.value.trim() < 0) {
+    missingFields.push("Invalid Humidity");
   }
 
   if (input4.value.trim() === "") {
-    missingFields.push("Days Since Rain");
+    missingFields.push("Invalid Days Since Rain");
   }
 
   if (missingFields.length > 0) {
     output.textContent =
-      "Error: Missing input(s): " + missingFields.join(", ");
+      "Error: " + missingFields.join(", ");
     output.style.color = "red";
     return;
   }
@@ -72,4 +82,12 @@ button.addEventListener("click", () => {
     output.textContent = "Error: " + error.message;
     output.style.color = "red";
   }
+});
+
+resetButton.addEventListener("click", () =>{
+  input1.value = "";
+  input2.value = "";
+  input3.value = "";
+  input4.value = "";
+  output.textContent = "";
 });
