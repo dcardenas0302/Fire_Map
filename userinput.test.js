@@ -10,7 +10,7 @@ describe("Missing input validation", () => {
     // Prevent the test from needing the real risk calculation
     global.calculateRisk = jest.fn(() => 50);
 
-    require("../userinput.js");
+    require("./userinput.js");
   });
 
   test("RG-06: blank humidity identifies Humidity as missing", () => {
