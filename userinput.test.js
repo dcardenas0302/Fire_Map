@@ -13,7 +13,7 @@ describe("Missing input validation", () => {
     require("./userinput.js");
   });
 
-  test("RG-06: blank humidity identifies Humidity as missing", () => {
+  test("LC-03: blank humidity identifies Humidity as missing", () => {
     const inputs = document.querySelectorAll("input");
     const button = document.querySelector("button");
 
