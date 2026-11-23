@@ -3,7 +3,7 @@
 ## Bug Fix 1: Missing-input message
 
 - Issue: [#89](https://github.com/dcardenas0302/Fire_Map/issues/89)
-- Pull Request: [PR #___](PR-LINK)
+- Pull Request: [PR #__96_](https://github.com/dcardenas0302/Fire_Map/pull/96)
 - Test: RG-06 — blank input identifies the missing field
 - File changed: `userinput.js`
 
@@ -20,7 +20,7 @@ This was a code bug because the requirement correctly expected the website to id
 ## Bug Fix 2: Non-number inputs
 
 - Issue: [#73](https://github.com/dcardenas0302/Fire_Map/issues/73)
-- Pull Request: [PR #_102__]()
+- Pull Request: [PR #_102__](https://github.com/dcardenas0302/Fire_Map/pull/102)
 - Tests: LC-05, LC-06, LC-07, and LC-08
 - Files changed: `risk.js` and `userinput.js`
 
