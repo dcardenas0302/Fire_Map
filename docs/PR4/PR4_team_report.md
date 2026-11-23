@@ -118,7 +118,7 @@ Status: Completed
 
 Conclusion: Success
 
-The final version of tests/risk.test.js contains the RG-04 and RG-05 regression tests. The successful workflow demonstrates that the automated test job passed after both fixes were integrated.
+The final version of tests/risk.test.js contains the RG-04 and RG-05 regression tests, and LC-05-LC-08 tests. The successful workflow demonstrates that the automated test job passed after both fixes were integrated.
 
 Final team-wide evidence: Update this section with a newer successful workflow if additional teammates' changes are merged afterward.
 
