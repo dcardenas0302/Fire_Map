@@ -66,25 +66,53 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     expect(validRisk(risk)).toBe(true);
   });
 
-
+//RG-03- Humidity over 100 is rejected
 test("RG-03: humidity above 100% is rejected", () => {
   expect(() => {
     calculateRisk(30, 101, 10, 5);
-  }).toThrow(RangeError);
+  }).toThrow("Humidity must be between 0 and 100%");
 });
 
 // RG-04 — Reject negative wind speed
 test("RG-04: negative wind speed is rejected", () => {
   expect(() => {
     calculateRisk(30, 50, -10, 5);
-  }).toThrow(RangeError);
+  }).toThrow("Wind speed must be 0 or greater");
 });
 
 // RG-05 — Reject negative days since rain
 test("RG-05: negative days since rain is rejected", () => {
   expect(() => {
     calculateRisk(30, 50, 10, -5);
-  }).toThrow(RangeError);
+  }).toThrow("Days since rain must be 0 or greater");
+});
+
+// LC-05 — Reject non-number humidity
+test("LC-05: non-number humidity input is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 'e', 10, 5);
+  }).toThrow("Humidity must be a number");
+});
+
+// LC-06 — Reject non-number temperature
+test("LC-06: non-number temperature is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk('e', 50, 10, 5);
+  }).toThrow("Temperature must be a number");
+});
+
+//LC-07 — Reject non-number wind speed
+test("LC-07: non-number wind speed is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 50, 'e', 5);
+  }).toThrow("Wind speed must be a number");
+});
+
+// LC-08 — Reject non-number days since rain
+test("LC-08: non-number days since rain is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 50, 10, 'e');
+  }).toThrow("Days since rain must be a number");
 });
 
 });
