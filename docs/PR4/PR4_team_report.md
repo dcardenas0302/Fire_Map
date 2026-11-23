@@ -16,7 +16,6 @@
 
 
 ## 2. Regression Log
-2. Regression Log
 
 Test ID
 
@@ -42,8 +41,6 @@ RG-05
 
 Negative days since rain accepted
 
-No regression found, this project is quite simple so it makes sense. 
-
 Passed — Run #129
 
 Merged
@@ -53,8 +50,6 @@ Both regression tests were written to demonstrate the original bugs before the c
 After implementing the fixes, both tests passed. A merge conflict between the two changes was resolved, preserving both validation checks and both regression tests.
 
 ## 3. Final Test Run
-3. Final Test Run
-
 The team ran the automated test workflow after merging the input-validation fixes.
 
 Final verified run: GitHub Actions Run #137
