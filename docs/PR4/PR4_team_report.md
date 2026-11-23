@@ -51,6 +51,58 @@ Both regression tests were written to demonstrate the original bugs before the c
 
 After implementing the fixes, both tests passed. A merge conflict between the two changes was resolved, preserving both validation checks and both regression tests.
 
+## 2. Regression Log
+
+Test ID
+
+LC-05, LC-06, LC-07, LC-08
+
+Bug
+
+Issue #73 — Non-number inputs were accepted instead of showing an invalid-input message.
+
+Red test result
+
+The tests failed before the validation fix because non-number values were not rejected correctly.  
+Run: #[add your failing run number or screenshot link]
+
+Green test result
+
+The tests passed after adding separate `TypeError` checks for non-number temperature, humidity, wind speed, and days since rain.  
+Run: #[add your passing run number or screenshot link]
+
+Final status
+
+Merged / Regression tests passing
+
+---
+
+Test ID
+
+RG-06
+
+Bug
+
+Issue #89 — Blank input did not identify which information was missing.
+
+Red test result
+
+The test failed before the fix because the website did not identify the missing field.  
+Run: #[add your failing run number or screenshot link]
+
+Green test result
+
+The test passed after the website was updated to display the missing field name.  
+Run: #[add your passing run number or screenshot link]
+
+Final status
+
+Merged / Regression test passing
+
+---
+
+The full test suite was run after the fixes. No regressions were found. All existing and new tests passed.
+
 ## 3. Final Test Run
 The team ran the automated test workflow after merging the input-validation fixes.
 
