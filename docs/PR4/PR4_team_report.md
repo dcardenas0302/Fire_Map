@@ -14,6 +14,10 @@
 | RG-05: Negative days since rain is rejected | Code bug | [#99](https://github.com/dcardenas0302/Fire_Map/issues/99) | Medium | Medium | Ryder Garcia | Fixed, PR [#101](https://github.com/dcardenas0302/Fire_Map/pull/101) merged into `main` |
 | LC-03: Display an error message for invalid inputs | Code bug | [#89](https://github.com/dcardenas0302/Fire_Map/issues/89) | Medium | High | Liliana Carrillo | Fixed on main; regression test pending |
 | LC-05–LC-08: non-number inputs are rejected | Code bug | [#73](https://github.com/dcardenas0302/Fire_Map/issues/73) | Low | Medium | Liliana Carrillo | Fixed on branch; PR pending |
+| JR-03: Temperature affects the calculated risk | Code bug | [#72](https://github.com/dcardenas0302/Fire_Map/issues/72) | High | Major | Jacobo Ramos | Fixed, PR[#93](https://github.com/dcardenas0302/Fire_Map/pull/93) merged into `main`|
+| RG-03: Humidity Values above 100% are accepted| Code Bug | [#84](https://github.com/dcardenas0302/Fire_Map/issues/84) | High | Medium | Jacobo Ramos | Fixed, PR[#97](https://github.com/dcardenas0302/Fire_Map/pull/97) merged into `main`|
+
+
 
 ## 2. Regression Log
 

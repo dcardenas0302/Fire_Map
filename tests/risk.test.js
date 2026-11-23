@@ -4,8 +4,6 @@ const calculateRisk = require("../risk.js");
 const validRisk = (risk) =>
   Number.isFinite(risk) && risk >= 0 && risk <= 100;
 
-//const isValidHumidity = calculateRisk.isValidHumidity;
-
 describe("RQ-03: Wildfire Risk Calculation", () => {
   // TC-01
   test("normal inputs return a valid risk", () => {
@@ -66,26 +64,6 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     expect(validRisk(risk)).toBe(true);
   });
 
-//RG-03- Humidity over 100 is rejected
-test("RG-03: humidity above 100% is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 101, 10, 5);
-  }).toThrow("Humidity must be between 0 and 100%");
-});
-
-// RG-04 — Reject negative wind speed
-test("RG-04: negative wind speed is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 50, -10, 5);
-  }).toThrow("Wind speed must be 0 or greater");
-});
-
-// RG-05 — Reject negative days since rain
-test("RG-05: negative days since rain is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 50, 10, -5);
-  }).toThrow("Days since rain must be 0 or greater");
-});
 
 // LC-05 — Reject non-number humidity
 test("LC-05: non-number humidity input is rejected as invalid", () => {
@@ -114,5 +92,32 @@ test("LC-08: non-number days since rain is rejected as invalid", () => {
     calculateRisk(30, 50, 10, 'e');
   }).toThrow("Days since rain must be a number");
 });
+});
+
+describe("Input Boundaries", () => {
+  
+  test("RG-03: empty humidity is rejected", () => {
+    expect(() => {
+      calculateRisk(20, NaN, 15, 2);
+    }).toThrow(RangeError)
+  })
+
+  test("RG-03: humidity above 100% is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 101, 10, 5);
+    }).toThrow(RangeError);
+  });
+
+  test("RG-04: negative wind speed is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 50, -10, 5);
+    }).toThrow(RangeError);
+  });
+  
+  test("RG-05: negative days since rain is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 50, 10, -5);
+    }).toThrow(RangeError);
+  });
 
 });
