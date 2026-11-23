@@ -4,8 +4,6 @@ const calculateRisk = require("../risk.js");
 const validRisk = (risk) =>
   Number.isFinite(risk) && risk >= 0 && risk <= 100;
 
-//const isValidHumidity = calculateRisk.isValidHumidity;
-
 describe("RQ-03: Wildfire Risk Calculation", () => {
   // TC-01
   test("normal inputs return a valid risk", () => {
@@ -66,25 +64,32 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     expect(validRisk(risk)).toBe(true);
   });
 
-
-test("RG-03: humidity above 100% is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 101, 10, 5);
-  }).toThrow(RangeError);
 });
 
-// RG-04 — Reject negative wind speed
-test("RG-04: negative wind speed is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 50, -10, 5);
-  }).toThrow(RangeError);
-});
+describe("Input Boundaries", () => {
+  
+  test("RG-03: empty humidity is rejected", () => {
+    expect(() => {
+      calculateRisk(20, NaN, 15, 2);
+    }).toThrow(RangeError)
+  })
 
-// RG-05 — Reject negative days since rain
-test("RG-05: negative days since rain is rejected", () => {
-  expect(() => {
-    calculateRisk(30, 50, 10, -5);
-  }).toThrow(RangeError);
-});
+  test("RG-03: humidity above 100% is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 101, 10, 5);
+    }).toThrow(RangeError);
+  });
+
+  test("RG-04: negative wind speed is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 50, -10, 5);
+    }).toThrow(RangeError);
+  });
+  
+  test("RG-05: negative days since rain is rejected", () => {
+    expect(() => {
+      calculateRisk(30, 50, 10, -5);
+    }).toThrow(RangeError);
+  });
 
 });
