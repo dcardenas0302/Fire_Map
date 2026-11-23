@@ -44,6 +44,14 @@ Negative days since rain accepted
 
 No regression found, this project is quite simple so it makes sense. 
 
+Passed — Run #129
+
+Merged
+
+Both regression tests were written to demonstrate the original bugs before the code was fixed. Each test expects the calculator to throw a RangeError when an invalid negative value is provided.
+
+After implementing the fixes, both tests passed. A merge conflict between the two changes was resolved, preserving both validation checks and both regression tests.
+
 ## 3. Final Test Run
 3. Final Test Run
 
