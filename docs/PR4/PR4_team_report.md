@@ -12,7 +12,8 @@
 | RG-02: Empty humidity field is rejected | Code bug | [#100](https://github.com/dcardenas0302/Fire_Map/issues/100) | High | High | Noam Garibi | Fixed on `noam-work`, PR pending |
 | RG-04: Negative wind speed is rejected | Code bug | [#85](https://github.com/dcardenas0302/Fire_Map/issues/85) | Medium | High | Ryder Garcia | Fixed, PR [#98](https://github.com/dcardenas0302/Fire_Map/pull/98) merged into `main` |
 | RG-05: Negative days since rain is rejected | Code bug | [#99](https://github.com/dcardenas0302/Fire_Map/issues/99) | Medium | Medium | Ryder Garcia | Fixed, PR [#101](https://github.com/dcardenas0302/Fire_Map/pull/101) merged into `main` |
-| LC-03 | Code bug | [#89](https://github.com/dcardenas0302/Fire_Map/issues/89) | Medium | High | Liliana Carrillo | Fixed on main; regression test pending |
+| LC-03: Display an error message for invalid inputs | Code bug | [#89](https://github.com/dcardenas0302/Fire_Map/issues/89) | Medium | High | Liliana Carrillo | Fixed on main; regression test pending |
+| LC-05–LC-08: non-number inputs are rejected | Code bug | [#73](https://github.com/dcardenas0302/Fire_Map/issues/73) | Low | Medium | Liliana Carrillo | Fixed on branch; PR pending |
 
 ## 2. Regression Log
 
