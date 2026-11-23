@@ -1,7 +1,7 @@
-Noam Garibi
+# Noam Garibi
 
 ### No Reset button on the page
-Issue: https://github.com/dcardenas0302/Fire_Map/issues/94 https://github.com/dcardenas0302/Fire_Map/issues/100
+Issue: https://github.com/dcardenas0302/Fire_Map/issues/94
 PR: https://github.com/dcardenas0302/Fire_Map/pull/102 
 
 #### Issue #94 — Before Fix
@@ -13,12 +13,12 @@ This was a code bug. Test NG-03 follows REQ-NG-03 and the README, which both say
 
 ### Empty humidity field is accepted
 Issue: https://github.com/dcardenas0302/Fire_Map/issues/100
-PR: none yet
+PR: https://github.com/dcardenas0302/Fire_Map/pull/102 
 
 #### Issue #100 — Before Fix
-[Issue 100 - Before Fix](screenshots/noam_garibi_issue100_before.png)
+![Issue 100 - Before Fix](screenshots/noam_garibi_issue100_before.png)
 #### Issue #100 — After Fix
-[Issue 100 - After Fix](screenshots/noam_garibi_issue100_after.png)
+![Issue 100 - After Fix](screenshots/noam_garibi_issue100_after.png)
 
 This was a code bug. Test RG-02 follows REQ-RG-02, which says a submission with an empty humidity field is rejected, so the test was right and the code was wrong to show "Wildfire Risk: NaN%".
 
