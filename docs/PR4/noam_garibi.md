@@ -1,8 +1,8 @@
 Noam Garibi
 
 ### No Reset button on the page
-Issue: https://github.com/dcardenas0302/Fire_Map/issues/94
-PR: none yet
+Issue: https://github.com/dcardenas0302/Fire_Map/issues/94 https://github.com/dcardenas0302/Fire_Map/issues/100
+PR: https://github.com/dcardenas0302/Fire_Map/pull/102 
 
 #### Issue #94 — Before Fix
 [Issue 94 - Before Fix](screenshots/noam_garibi_issue94_before.png)
