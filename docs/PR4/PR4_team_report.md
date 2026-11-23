@@ -92,7 +92,7 @@ Test cases:
 
 ## 5. Board Snapshot
 
-
+![alt text](image.png)
 
 ## 6. Sprint Summary
 
