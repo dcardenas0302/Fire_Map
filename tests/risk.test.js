@@ -99,7 +99,7 @@ describe("Input Boundaries", () => {
   test("RG-03: empty humidity is rejected", () => {
     expect(() => {
       calculateRisk(20, NaN, 15, 2);
-    }).toThrow(RangeError)
+    }).toThrow("Humidity must be a number")
   })
 
   test("RG-03: humidity above 100% is rejected", () => {
