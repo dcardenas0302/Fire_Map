@@ -11,7 +11,7 @@ This was a code bug because the requirement correctly expected the website to id
 
 ### Before
 
-![Issue #89 before fix] No prior display 
+![Issue #89 before fix](screenshots/liliana_carrillo_issue89_before.png)
 
 ### After
 
@@ -20,7 +20,7 @@ This was a code bug because the requirement correctly expected the website to id
 ## Bug Fix 2: Non-number inputs
 
 - Issue: [#73](https://github.com/dcardenas0302/Fire_Map/issues/73)
-- Pull Request: [PR #___](PR-LINK)
+- Pull Request: [PR #_102__]()
 - Tests: LC-05, LC-06, LC-07, and LC-08
 - Files changed: `risk.js` and `userinput.js`
 
