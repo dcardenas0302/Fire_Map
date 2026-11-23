@@ -1,16 +1,35 @@
 function calculateRisk(temp, humidity, wind, daysSinceRain) {
 
-  if (!Number.isFinite(humidity) || humidity < 0 || humidity > 100) {
-    throw new RangeError("Humidity must be between 0 and 100%");
-  }
 
-  if (!Number.isFinite(wind) || wind < 0) {
-    throw new RangeError("Wind speed must be 0 or greater");
-  }
+  // Reject non-number values
+if (!Number.isFinite(temp)) {
+  throw new TypeError("Temperature must be a number");
+}
 
-  if (!Number.isFinite(daysSinceRain) || daysSinceRain < 0) {
-    throw new RangeError("days since rain must be 0 or greater");
-  }
+if (!Number.isFinite(humidity)) {
+  throw new TypeError("Humidity must be a number");
+}
+
+if (!Number.isFinite(wind)) {
+  throw new TypeError("Wind speed must be a number");
+}
+
+if (!Number.isFinite(daysSinceRain)) {
+  throw new TypeError("Days since rain must be a number");
+}
+
+// Reject numbers outside allowed ranges
+if (humidity < 0 || humidity > 100) {
+  throw new RangeError("Humidity must be between 0 and 100%");
+}
+
+if (wind < 0) {
+  throw new RangeError("Wind speed must be 0 or greater");
+}
+
+if (daysSinceRain < 0) {
+  throw new RangeError("Days since rain must be 0 or greater");
+}
 
   // Clamp inputs to safe physical bounds
   const h = Math.max(0, Math.min(100, humidity));
