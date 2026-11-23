@@ -13,7 +13,7 @@ This bug was discovered while manually reading the code and noticing that temp w
 
 ### Humidity Values above 100% are accepted
 Issue: https://github.com/dcardenas0302/Fire_Map/issues/84
-PR: none yet
+PR: https://github.com/dcardenas0302/Fire_Map/pull/97
 
 #### Issue #84 - Before Fix
 ![Issue 84 - Before Fix](jacobo_ramos_issue84_before.png)
