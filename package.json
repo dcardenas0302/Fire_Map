@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dcardenas0302/Requirement_Analysis#readme",
   "devDependencies": {
-    "jest": "^30.5.2"
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2"
   }
 }

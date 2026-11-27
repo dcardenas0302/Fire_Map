@@ -64,6 +64,34 @@ describe("RQ-03: Wildfire Risk Calculation", () => {
     expect(validRisk(risk)).toBe(true);
   });
 
+
+// LC-05 — Reject non-number humidity
+test("LC-05: non-number humidity input is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 'e', 10, 5);
+  }).toThrow("Humidity must be a number");
+});
+
+// LC-06 — Reject non-number temperature
+test("LC-06: non-number temperature is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk('e', 50, 10, 5);
+  }).toThrow("Temperature must be a number");
+});
+
+//LC-07 — Reject non-number wind speed
+test("LC-07: non-number wind speed is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 50, 'e', 5);
+  }).toThrow("Wind speed must be a number");
+});
+
+// LC-08 — Reject non-number days since rain
+test("LC-08: non-number days since rain is rejected as invalid", () => {
+  expect(() => {
+    calculateRisk(30, 50, 10, 'e');
+  }).toThrow("Days since rain must be a number");
+});
 });
 
 describe("Input Boundaries", () => {
@@ -71,7 +99,7 @@ describe("Input Boundaries", () => {
   test("RG-03: empty humidity is rejected", () => {
     expect(() => {
       calculateRisk(20, NaN, 15, 2);
-    }).toThrow(RangeError)
+    }).toThrow("Humidity must be a number")
   })
 
   test("RG-03: humidity above 100% is rejected", () => {

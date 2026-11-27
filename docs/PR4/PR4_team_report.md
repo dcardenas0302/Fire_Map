@@ -1,6 +1,6 @@
 # PR4 Team Report
 
-**Team number:**
+**Team number:** 8
 
 **Names:** Noam Garibi, Jacobo Ramos Gracia, Liliana Carrillo, Ryder Garcia
 
@@ -12,6 +12,8 @@
 | RG-02: Empty humidity field is rejected | Code bug | [#100](https://github.com/dcardenas0302/Fire_Map/issues/100) | High | High | Noam Garibi | Fixed on `noam-work`, PR pending |
 | RG-04: Negative wind speed is rejected | Code bug | [#85](https://github.com/dcardenas0302/Fire_Map/issues/85) | Medium | High | Ryder Garcia | Fixed, PR [#98](https://github.com/dcardenas0302/Fire_Map/pull/98) merged into `main` |
 | RG-05: Negative days since rain is rejected | Code bug | [#99](https://github.com/dcardenas0302/Fire_Map/issues/99) | Medium | Medium | Ryder Garcia | Fixed, PR [#101](https://github.com/dcardenas0302/Fire_Map/pull/101) merged into `main` |
+| LC-03: Display an error message for invalid inputs | Code bug | [#89](https://github.com/dcardenas0302/Fire_Map/issues/89) | Medium | High | Liliana Carrillo | Fixed on main; regression test pending |
+| LC-05–LC-08: non-number inputs are rejected | Code bug | [#73](https://github.com/dcardenas0302/Fire_Map/issues/73) | Low | Medium | Liliana Carrillo | Fixed on branch; PR pending |
 | JR-03: Temperature affects the calculated risk | Code bug | [#72](https://github.com/dcardenas0302/Fire_Map/issues/72) | High | Major | Jacobo Ramos | Fixed, PR[#93](https://github.com/dcardenas0302/Fire_Map/pull/93) merged into `main`|
 | RG-03: Humidity Values above 100% are accepted| Code Bug | [#84](https://github.com/dcardenas0302/Fire_Map/issues/84) | High | Medium | Jacobo Ramos | Fixed, PR[#97](https://github.com/dcardenas0302/Fire_Map/pull/97) merged into `main`|
 
@@ -53,6 +55,58 @@ Both regression tests were written to demonstrate the original bugs before the c
 
 After implementing the fixes, both tests passed. A merge conflict between the two changes was resolved, preserving both validation checks and both regression tests.
 
+## 2. Regression Log
+
+Test ID
+
+LC-05, LC-06, LC-07, LC-08
+
+Bug
+
+Issue #73 — Non-number inputs were accepted instead of showing an invalid-input message.
+
+Red test result
+
+The tests failed before the validation fix because non-number values were not rejected correctly.  
+Run: #[add your failing run number or screenshot link]
+
+Green test result
+
+The tests passed after adding separate `TypeError` checks for non-number temperature, humidity, wind speed, and days since rain.  
+Run: #[add your passing run number or screenshot link]
+
+Final status
+
+Merged / Regression tests passing
+
+---
+
+Test ID
+
+RG-06
+
+Bug
+
+Issue #89 — Blank input did not identify which information was missing.
+
+Red test result
+
+The test failed before the fix because the website did not identify the missing field.  
+Run: #[add your failing run number or screenshot link]
+
+Green test result
+
+The test passed after the website was updated to display the missing field name.  
+Run: #[add your passing run number or screenshot link]
+
+Final status
+
+Merged / Regression test passing
+
+---
+
+The full test suite was run after the fixes. No regressions were found. All existing and new tests passed.
+
 ## 3. Final Test Run
 The team ran the automated test workflow after merging the input-validation fixes.
 
@@ -62,13 +116,13 @@ Branch: main
 
 Workflow: Tests
 
-Trigger: Merge of Pull Request #101
+Trigger: Merge of Pull Request #102
 
 Status: Completed
 
 Conclusion: Success
 
-The final version of tests/risk.test.js contains the RG-04 and RG-05 regression tests. The successful workflow demonstrates that the automated test job passed after both fixes were integrated.
+The final version of tests/risk.test.js contains the RG-04 and RG-05 regression tests, and LC-05-LC-08 tests. The successful workflow demonstrates that the automated test job passed after both fixes were integrated.
 
 Final team-wide evidence: Update this section with a newer successful workflow if additional teammates' changes are merged afterward.
 
